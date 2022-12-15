@@ -8,6 +8,7 @@ contract GoodContract {
         balances[msg.sender] += msg.value;
     }
 
+
     function withdraw() public {
         require(balances[msg.sender] > 0);
         (bool sent, ) = msg.sender.call{value: balances[msg.sender]}("");
